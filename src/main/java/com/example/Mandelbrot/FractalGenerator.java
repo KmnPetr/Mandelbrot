@@ -3,7 +3,6 @@ package com.example.Mandelbrot;
 import java.awt.geom.Rectangle2D;
 
 public abstract class FractalGenerator {
-
     /**
      * Эта статическая вспомогательная функция принимает целочисленную координату и преобразует ее
      * в значение двойной точности, соответствующее определенному диапазону.

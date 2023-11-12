@@ -8,7 +8,7 @@ public class MandelbrotApplication {
 	public static void main(String[] args) {
 //		SpringApplication.run(MandelbrotApplication.class, args);
 
-		FractalExplorer displayExplorer = new FractalExplorer(100);
+		FractalExplorer displayExplorer = new FractalExplorer(400);
 		displayExplorer.createAndShowGUI();
 		displayExplorer.drawFractal();
 

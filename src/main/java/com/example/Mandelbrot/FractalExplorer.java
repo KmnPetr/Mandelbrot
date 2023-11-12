@@ -155,6 +155,8 @@ public class FractalExplorer {
         display.repaint();
 
 
+
+
         System.out.println("drawFractal:  "+ (System.currentTimeMillis()-timestart));
     }
 

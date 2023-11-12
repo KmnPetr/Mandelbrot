@@ -7,8 +7,7 @@ public class Mandelbrot extends FractalGenerator
     /**
      * Константа для количества максимальных итераций.
      */
-//    public static final int MAX_ITERATIONS = 2500;
-    public static final int MAX_ITERATIONS = 10000;
+    public static final int MAX_ITERATIONS = 2500;
 
     /**
      * Этот метод позволяет генератору фракталов указать, какая часть
@@ -49,14 +48,26 @@ public class Mandelbrot extends FractalGenerator
          * до Z ^ 2> 4 (абсолютное значение Z больше 2) или максимум
          * достигнуто количество итераций.
          */
-        while (iteration < MAX_ITERATIONS &&
-                zreal * zreal + zimaginary * zimaginary < 4/*zreal-x<4 это немного улучшает*/)
+        while (true)
         {
-            zrealUpdated = zreal * zreal - zimaginary * zimaginary + x;
-            zimaginaryUpdated = 2 * zreal * zimaginary + y;
-            zreal = zrealUpdated;
-            zimaginary = zimaginaryUpdated;
-            iteration += 1;
+            double a = zreal * zreal + zimaginary * zimaginary;
+
+
+            if (iteration < MAX_ITERATIONS &&
+                    a < 4){
+                zrealUpdated = zreal * zreal - zimaginary * zimaginary + x;
+                zimaginaryUpdated = 2 * zreal * zimaginary + y;
+                zreal = zrealUpdated;
+                zimaginary = zimaginaryUpdated;
+                iteration += 1;}
+            else{
+                break;
+            }
+
+//            if (iteration > 1 && a == 0.0) {
+//                iteration=MAX_ITERATIONS;
+//                break;
+//            }
         }
 
         /**
